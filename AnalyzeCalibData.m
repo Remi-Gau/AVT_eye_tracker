@@ -3,6 +3,7 @@
 clc; clear; close all;
 
 Subjects = 2;
+Run = 1;
 
 % Screen variable
 Opt.HorRes = 1024;
@@ -64,13 +65,13 @@ LogFileList = dir(fullfile(StartDirectory, 'Subjects_Data', ...
     ['Subject_' sprintf('%1.0f', Subjects(SubjInd))], 'Behavioral', ...
     ['GazeData_Subject_', num2str(Subjects(SubjInd)), '_Run_*.txt']));
 
-RunNumber = LogFileList(1).name(end-23:end-20);
+RunNumber = LogFileList(Run).name(end-23:end-20);
 
 % Extracts the content of the text file
-disp(LogFileList(1).name)
+disp(LogFileList(Run).name)
 fid = fopen(fullfile(StartDirectory, 'Subjects_Data', ...
     ['Subject_' sprintf('%1.0f', Subjects(SubjInd))], 'Behavioral', ...
-    LogFileList(1).name ));
+    LogFileList(Run).name ));
 FileContent = textscan(fid,'%s %s %s %s %s %s %s %s %s', 'headerlines', IndStart, 'returnOnError',0);
 fclose(fid);
 clear fid
