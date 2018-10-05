@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1447105.svg)](https://doi.org/10.5281/zenodo.1447105)
+
 # AVT_eye_tracker
 
 Analysis code for the eyetracking data for the participant screnning of the AVT study at 7T. 
